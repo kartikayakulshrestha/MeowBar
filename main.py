@@ -6,7 +6,10 @@ from keras.models import Sequential
 
 import numpy as nump
 
+import matplotlib.pyplot as plot
 #Going to do binary image classification with cnn with tensorflow 
+
+"""Data set loading..."""
 
 
 #importing images here
@@ -26,4 +29,7 @@ M_test=nump.reshape(M_test,(len(M_test),1))
 #we want our pixil to be between to 0 to 1
 L_train=L_train/255.0
 M_train=M_train/255.0
-print(L_train)
+
+
+"""Model"""
+
