@@ -17,12 +17,13 @@ L_test=nump.loadtxt("Image Classification CNN Keras Dataset/input_test.csv" , de
 M_test=nump.loadtxt("Image Classification CNN Keras Dataset/labels_test.csv" , delimiter=",")
 
 #resizing them in
-L_train=nump.reshape(len(L_train),100,100,3)
-M_train=nump.reshape(len(M_train),1)
+L_train=nump.reshape(L_train,(len(L_train),100,100,3))
+M_train=nump.reshape(M_train,(len(M_train),1))
 
-L_test=nump.reshape(len(L_test),100,100,3)
-M_test=nump.reshape(len(M_test),1)
+L_test=nump.reshape(L_test,(len(L_test),100,100,3))
+M_test=nump.reshape(M_test,(len(M_test),1))
 
-
-
-print(L_train.shape)
+#we want our pixil to be between to 0 to 1
+L_train=L_train/255.0
+M_train=M_train/255.0
+print(L_train)
