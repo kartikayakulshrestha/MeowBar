@@ -32,4 +32,7 @@ M_train=M_train/255.0
 
 
 """Model"""
-
+model=Sequential([
+    Conv2D(32,(3,3),padding="same",activation="relu",input_shape=(100,100,3))
+    
+])
