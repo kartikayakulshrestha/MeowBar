@@ -31,8 +31,18 @@ L_train=L_train/255.0
 M_train=M_train/255.0
 
 
-"""Model"""
+"""Model sequence"""
 model=Sequential([
-    Conv2D(32,(3,3),padding="same",activation="relu",input_shape=(100,100,3))
-    
+    Conv2D(32,(3,3),padding="same",activation="relu",input_shape=(100,100,3)),
+    MaxPool2D(pool_size=(2,2)),
+
+    Conv2D(32,(3,3),activation="relue",padding="same"),
+    MaxPool2D((2,2)),
+
+    Flatten(),
+    Dense(64,activation="relu"),
+    Dense(1,activation="sigmoid")
 ])
+
+
+
