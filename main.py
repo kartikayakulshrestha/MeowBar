@@ -36,13 +36,19 @@ model=Sequential([
     Conv2D(32,(3,3),padding="same",activation="relu",input_shape=(100,100,3)),
     MaxPool2D(pool_size=(2,2)),
 
-    Conv2D(32,(3,3),activation="relue",padding="same"),
+    Conv2D(32,(3,3),activation="relu",padding="same"),
     MaxPool2D((2,2)),
 
     Flatten(),
     Dense(64,activation="relu"),
     Dense(1,activation="sigmoid")
 ])
+
+"""Model cost function and backpropagation algo"""
+model.compile(optimizer="adam",loss="binary_crossentropy",metrics=["accuracy"])
+
+model.fit(L_train,M_train, epochs=5,batch_size=64)
+
 
 
 
